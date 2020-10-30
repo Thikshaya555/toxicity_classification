@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:grey">
+<h1 style="color:red">TOXICITY CLASSIFICATION</h1>
+<p> The problem statement is Given a group of sentences or paragraphs, used as a comment by a user in an online platform, classify it to belong to one or more of the following categories — toxic, severe-toxic, obscene, threat, insult or identity-hate with either approximate probabilities or discrete values (0/1).</p>
+<br/>
+<p>As the task was to figure out whether the data belongs to zero, one, or more than one categories out of the six listed above, the first step before working on the problem was to distinguish between multi-label and multi-class classification.
+In multi-class classification, we have one basic assumption that our data can belong to only one label out of all the labels we have. For example, a given picture of a fruit may be an apple, orange or guava only and not a combination of these.
+In multi-label classification, data can belong to more than one label simultaneously. For example, in our case a comment may be toxic, obscene and insulting at the same time. It may also happen that the comment is non-toxic and hence does not belong to any of the six labels.
+Hence, I had a multi-label classification problem to solve. The next step was to gain some useful insights from data which would aid further problem solving.</p>
+
+<br/>
+
+<p>Solution : Since including very long length comments for training increased the number of words manifold, the kernel was unable to handle the required memory. It was required to trim the data effectively, so as to not miss essential features and loose accuracy. Setting 400 characters as the threshold included up to 80% of the data and hence appeared to be a good choice. “We had less words in total, but the percentage of toxic words captured were more”.Lemmatising is the process of grouping together the inflected forms of a word so they can be analyzed as a single item. This is quite similar to stemming in its working but not exactly same. Lemmatising depends on correctly identifying the intended part of speech and meaning of a word in a sentence, as well as within the larger context surrounding that sentence, such as neighboring sentences or even an entire document. I used the word-net library in nltk for this purpose. Stemmer and Lemmatizer were imported from nltk.</p>
+
+
+<p style="color:black">result of the problem statement</p>
+<p>"id" {{ name1}}</p>
+<p>"toxic" {{name2}}</p>
+<p>"severe toxic" {{ name3 }}</p>
+<p>"obscene" {{ name4 }}</p>
+<p>"threat" {{ name5 }}</p>
+<p>"insult" {{ name6 }}</p>
+</body>
+</html>
+
+
